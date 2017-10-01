@@ -17,10 +17,15 @@ export class RestclientpostComponent implements OnInit {
   {
 
    }
+   fetchBooks(): void {
+    this.httpService.getBooksWithPromise()
+      .then( books => this.books = books,
+             error =>  this.errorMessage = <any>error);   
+}
    addBook(): void {
     this.httpService.addBookWithPromise(this.patient)
       .then( patient => {
-         //  this.fetchBooks();		
+          this.fetchBooks();		
                              this.reset();   
                      this.bookName = patient.name;					 
        },

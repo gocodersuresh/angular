@@ -6,12 +6,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 import { Book } from './book';
-//example followedhttp://www.concretepage.com/angular-2/angular-2-http-post-example
+//example followed http://www.concretepage.com/angular-2/angular-2-http-post-example
 
 @Injectable()
 export class HttpserviceService {
   url = "api/books";
   constructor(private http:Http) { }
+  getBooksWithPromise(): Promise<Book[]> {
+    return this.http.get(this.url).toPromise()
+    .then(this.extractData)
+          .catch(this.handleErrorPromise);
+}
   addBookWithPromise(book:Book): Promise<Book> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
           let options = new RequestOptions({ headers: headers });
