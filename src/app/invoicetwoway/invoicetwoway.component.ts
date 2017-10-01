@@ -8,7 +8,7 @@ import 'rxjs/add/operator/map';
 })
 export class InvoicetwowayComponent implements OnInit {
   itemPrice:string="23";
-  data: any = null;
+  jsonContent: any = null;
   url:string="";
   constructor(private _http: Http) {
     this.getEmpList();
@@ -20,9 +20,9 @@ private getEmpList()
 {
   return this._http.get('https://jsonplaceholder.typicode.com/posts/1')
                .map((res: Response) => res.json())
-              .subscribe(data => {
-                        this.data = data;
-                        console.log(this.data);
+              .subscribe(jsonContent => {
+                        this.jsonContent = jsonContent;
+                        console.log(this.jsonContent);
                 });
 }
 
