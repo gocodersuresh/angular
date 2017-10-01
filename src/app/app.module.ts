@@ -9,6 +9,7 @@ import { DatalistshowComponent } from './datalistshow/datalistshow.component';
 import { FormcomponentComponent } from './formcomponent/formcomponent.component';
 import { InvoicetwowayComponent } from './invoicetwoway/invoicetwoway.component';
 
+
 const appRoutes: Routes = [
   { path: 'course', component: CourseComponent },
   { path: 'datalist', component: DatalistshowComponent },
