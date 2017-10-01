@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
 import { Book } from './book';
-
+//example followedhttp://www.concretepage.com/angular-2/angular-2-http-post-example
 
 @Injectable()
 export class HttpserviceService {
