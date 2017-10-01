@@ -1,0 +1,24 @@
+<p>
+  restclientpost works!
+</p>
+<h3>Book Details with Promise </h3>
+<ul>
+  <li *ngFor="let patient of books" >
+    Id: {{patient.id}}, Name: {{patient.name}}
+  </li>
+</ul>
+<div>
+  <div>
+     <label>Id: </label>
+     <input [(ngModel)]="patient.id" />
+  </div>
+  <div>
+     <label>Name: </label>
+     <input [(ngModel)]="patient.name" />
+  </div>
+  <div>
+     <button (click)="addBook()">Add</button>
+  </div>
+</div> 
+<div *ngIf="bookName" [ngClass] = "'success'"> {{bookName}} Added. </div>
+<div *ngIf="errorMessage" [ngClass] = "'error'"> {{errorMessage}} </div> 
